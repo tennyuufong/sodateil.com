@@ -38,6 +38,42 @@ const services = [
   }
 ];
 
+// Teacher data: replace names, roles, messages, and introductions before the official launch.
+const teachers = [
+  {
+    name: "スタッフA（仮）",
+    role: "児童指導員",
+    message: "安心して過ごせる関係づくりを大切にしています。",
+    // TODO: 先生本人が書いた自己紹介文に置き換えてください。
+    intro:
+      "お子さま一人ひとりの気持ちを丁寧に受け止めながら、日々の活動を通して小さな成長を支えていきます。"
+  },
+  {
+    name: "スタッフB（仮）",
+    role: "作業療法士",
+    message: "身体の使い方や感覚面の支援をわかりやすく行います。",
+    // TODO: 先生本人が書いた自己紹介文に置き換えてください。
+    intro:
+      "遊びや制作活動を通じて、姿勢、手先の使い方、活動への参加を無理なく伸ばせるよう支援します。"
+  },
+  {
+    name: "スタッフC（仮）",
+    role: "言語聴覚士",
+    message: "伝えたい気持ちを大切にした関わりを行います。",
+    // TODO: 先生本人が書いた自己紹介文に置き換えてください。
+    intro:
+      "ことばやコミュニケーションの様子に合わせて、伝える力や聞く力を日常のやり取りの中で育みます。"
+  },
+  {
+    name: "スタッフD（仮）",
+    role: "保育士",
+    message: "楽しく落ち着いて過ごせる時間をつくります。",
+    // TODO: 先生本人が書いた自己紹介文に置き換えてください。
+    intro:
+      "子どもたちが安心して挑戦できる雰囲気を大切にし、遊びや生活の場面で成長を見守ります。"
+  }
+];
+
 const galleryImages = [
   {
     src: "/images/activity-space.jpg",
@@ -107,6 +143,7 @@ export default function Home() {
           <a href="#top">トップ</a>
           <a href="#about">施設について</a>
           <a href="#services">サービス内容</a>
+          <a href="#staff">スタッフ紹介</a>
           <a href="#gallery">教室紹介</a>
           <a href="#flow">ご利用の流れ</a>
           <a href="#news">お知らせ</a>
@@ -192,6 +229,35 @@ export default function Home() {
                 <article className="serviceCard" key={service.title}>
                   <h3>{service.title}</h3>
                   <p>{service.text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section staffSection" id="staff" aria-labelledby="staff-title">
+          <div className="sectionInner">
+            <div className="sectionHeading">
+              <p className="sectionLabel">スタッフ紹介</p>
+              <h2 id="staff-title">スタッフ紹介</h2>
+              <p>ソダテイル教室で子どもたちを支えるスタッフをご紹介します。</p>
+            </div>
+            <div className="teacherGrid">
+              {teachers.map((teacher) => (
+                <article className="teacherCard" key={teacher.name}>
+                  {/* Teacher image placeholder: replace this area with a real staff photo when available. */}
+                  <div className="teacherPhotoPlaceholder" role="img" aria-label={`${teacher.name}の写真をアップロードしてください`}>
+                    写真をアップロードしてください
+                  </div>
+                  <div className="teacherBody">
+                    <p className="teacherRole">{teacher.role}</p>
+                    <h3>{teacher.name}</h3>
+                    <p className="teacherMessage">
+                      <span>メッセージ</span>
+                      {teacher.message}
+                    </p>
+                    <p>{teacher.intro}</p>
+                  </div>
                 </article>
               ))}
             </div>

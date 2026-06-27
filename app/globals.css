@@ -259,6 +259,7 @@ h3 {
 .sectionHeading p,
 .serviceCard p,
 .supportCard p,
+.teacherCard p,
 .flowList p,
 .contactPanel p,
 .siteFooter p {
@@ -333,6 +334,80 @@ h3 {
 
 .serviceCard:nth-child(3) {
   background: var(--surface-yellow);
+}
+
+.staffSection {
+  background: linear-gradient(180deg, #ffffff 0%, var(--surface-blue) 100%);
+}
+
+.teacherGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.teacherCard {
+  overflow: hidden;
+  border: 1px solid rgba(116, 183, 213, 0.28);
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 12px 34px rgba(43, 105, 107, 0.09);
+}
+
+.teacherPhotoPlaceholder {
+  display: grid;
+  aspect-ratio: 4 / 5;
+  place-items: center;
+  padding: 22px;
+  background:
+    linear-gradient(135deg, rgba(238, 248, 251, 0.96), rgba(238, 248, 244, 0.96)),
+    repeating-linear-gradient(45deg, rgba(116, 183, 213, 0.08) 0 8px, rgba(255, 255, 255, 0.2) 8px 16px);
+  color: var(--green-dark);
+  font-size: 0.92rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.teacherBody {
+  padding: 22px;
+}
+
+.teacherRole {
+  display: inline-flex;
+  margin-bottom: 10px;
+  border-radius: 999px;
+  padding: 5px 11px;
+  background: var(--surface-green);
+  color: var(--green-dark) !important;
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.teacherBody h3 {
+  margin-bottom: 12px;
+}
+
+.teacherMessage {
+  margin-bottom: 12px;
+  border-left: 4px solid var(--blue);
+  padding-left: 12px;
+  color: #315255 !important;
+  font-size: 0.92rem;
+  font-weight: 800;
+  line-height: 1.7;
+}
+
+.teacherMessage span {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--green-dark);
+  font-size: 0.78rem;
+}
+
+.teacherBody p:last-child {
+  margin-bottom: 0;
+  font-size: 0.94rem;
+  line-height: 1.75;
 }
 
 .gallerySection {
@@ -547,6 +622,10 @@ figcaption {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .teacherGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .flowList {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -618,6 +697,7 @@ figcaption {
   }
 
   .supportGrid,
+  .teacherGrid,
   .gallerySmallGrid,
   .flowList {
     grid-template-columns: 1fr;
