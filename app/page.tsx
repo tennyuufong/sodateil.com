@@ -41,32 +41,40 @@ const services = [
 // Teacher data: replace names, roles, messages, and introductions before the official launch.
 const teachers = [
   {
-    name: "スタッフA（仮）",
+    name: "Mika Tanaka",
     role: "児童指導員",
+    image: "/images/staff/mika-tanaka.png",
+    imageAlt: "Mika Tanakaのスタッフ紹介用イラスト",
     message: "安心して過ごせる関係づくりを大切にしています。",
     // TODO: 先生本人が書いた自己紹介文に置き換えてください。
     intro:
       "お子さま一人ひとりの気持ちを丁寧に受け止めながら、日々の活動を通して小さな成長を支えていきます。"
   },
   {
-    name: "スタッフB（仮）",
+    name: "Ken Sato",
     role: "作業療法士",
+    image: "/images/staff/ken-sato.png",
+    imageAlt: "Ken Satoのスタッフ紹介用イラスト",
     message: "身体の使い方や感覚面の支援をわかりやすく行います。",
     // TODO: 先生本人が書いた自己紹介文に置き換えてください。
     intro:
       "遊びや制作活動を通じて、姿勢、手先の使い方、活動への参加を無理なく伸ばせるよう支援します。"
   },
   {
-    name: "スタッフC（仮）",
+    name: "Sara Nakamura",
     role: "言語聴覚士",
+    image: "/images/staff/sara-nakamura.png",
+    imageAlt: "Sara Nakamuraのスタッフ紹介用イラスト",
     message: "伝えたい気持ちを大切にした関わりを行います。",
     // TODO: 先生本人が書いた自己紹介文に置き換えてください。
     intro:
       "ことばやコミュニケーションの様子に合わせて、伝える力や聞く力を日常のやり取りの中で育みます。"
   },
   {
-    name: "スタッフD（仮）",
+    name: "Emma Mori",
     role: "保育士",
+    image: "/images/staff/emma-mori.png",
+    imageAlt: "Emma Moriのスタッフ紹介用イラスト",
     message: "楽しく落ち着いて過ごせる時間をつくります。",
     // TODO: 先生本人が書いた自己紹介文に置き換えてください。
     intro:
@@ -245,9 +253,9 @@ export default function Home() {
             <div className="teacherGrid">
               {teachers.map((teacher) => (
                 <article className="teacherCard" key={teacher.name}>
-                  {/* Teacher image placeholder: replace this area with a real staff photo when available. */}
-                  <div className="teacherPhotoPlaceholder" role="img" aria-label={`${teacher.name}の写真をアップロードしてください`}>
-                    写真をアップロードしてください
+                  {/* Temporary AI illustration: replace with a real staff photo before the official launch. */}
+                  <div className="teacherPhoto">
+                    <Image src={teacher.image} alt={teacher.imageAlt} fill sizes="(max-width: 620px) 100vw, (max-width: 1040px) 50vw, 25vw" />
                   </div>
                   <div className="teacherBody">
                     <p className="teacherRole">{teacher.role}</p>
