@@ -235,10 +235,10 @@ export default function Home() {
               </p>
             </div>
             <div className="contactActions">
-              <a className="button primary" href="mailto:info@example.jp">
+              <a className="button primary" href="tel:0456428965">
                 お問い合わせ
               </a>
-              <a className="button secondary" href="mailto:info@example.jp?subject=見学申し込み">
+              <a className="button secondary" href="tel:0456428965">
                 見学を申し込む
               </a>
             </div>
@@ -250,9 +250,9 @@ export default function Home() {
         <div className="footerInner">
           <div>
             <p className="footerName">施設名</p>
-            <p>〒000-0000 住所をご入力ください</p>
-            <p>電話番号：000-0000-0000</p>
-            <p>開所時間：平日 00:00〜00:00</p>
+            <p>〒221-0001 神奈川県横浜市神奈川区西寺尾1-18-7 CMA西寺尾2F</p>
+            <p>電話番号：045-642-8965</p>
+            <p>開所時間：10:00〜19:00</p>
           </div>
           <a href="#top">プライバシーポリシー</a>
         </div>
