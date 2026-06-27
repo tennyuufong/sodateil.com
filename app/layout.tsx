@@ -6,13 +6,13 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://example.jp";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "児童発達支援・放課後等デイサービス｜施設名",
+  title: "ソダテイル教室｜放課後等デイサービス",
   description:
-    "お子さま一人ひとりの発達段階や個性に合わせた支援を行う児童発達支援・放課後等デイサービス施設です。見学・ご相談を受け付けています。",
+    "ソダテイル教室は、放課後等デイサービスを提供する児童発達支援施設です。お子さま一人ひとりに寄り添い、見学・ご相談を受け付けています。",
   openGraph: {
-    title: "児童発達支援・放課後等デイサービス｜施設名",
+    title: "ソダテイル教室｜放課後等デイサービス",
     description:
-      "お子さま一人ひとりの発達段階や個性に合わせた支援を行う児童発達支援・放課後等デイサービス施設です。見学・ご相談を受け付けています。",
+      "ソダテイル教室は、放課後等デイサービスを提供する児童発達支援施設です。見学・ご相談を受け付けています。",
     images: ["/images/classroom-hero.jpg"],
     locale: "ja_JP",
     type: "website"

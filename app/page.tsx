@@ -1,11 +1,26 @@
 import Image from "next/image";
 
 const supportAreas = [
-  "健康・生活",
-  "運動・感覚",
-  "認知・行動",
-  "言語・コミュニケーション",
-  "人間関係・社会性"
+  {
+    title: "健康・生活",
+    text: "身支度や生活リズムを整え、安心して過ごせる習慣づくりを支援します。"
+  },
+  {
+    title: "運動・感覚",
+    text: "遊びや活動を通じて、身体の使い方や感覚への気づきを育みます。"
+  },
+  {
+    title: "認知・行動",
+    text: "見通しを持って行動できるよう、分かりやすい環境づくりを行います。"
+  },
+  {
+    title: "言語・コミュニケーション",
+    text: "気持ちや考えを伝える力を、日々のやり取りの中で丁寧に支えます。"
+  },
+  {
+    title: "人間関係・社会性",
+    text: "友だちや職員との関わりを通して、社会性を少しずつ育てます。"
+  }
 ];
 
 const services = [
@@ -47,17 +62,35 @@ const galleryImages = [
 ];
 
 const dailyFlow = [
-  "来所",
-  "健康確認",
-  "個別活動",
-  "集団活動",
-  "片付け・帰りの準備",
-  "ご帰宅"
+  {
+    title: "来所",
+    text: "スタッフが受け入れ、落ち着いて活動へ入れるよう準備します。"
+  },
+  {
+    title: "健康確認",
+    text: "体調や気持ちを確認し、その日の様子に合わせて過ごし方を調整します。"
+  },
+  {
+    title: "個別活動",
+    text: "一人ひとりの目標に合わせ、学習や生活動作を丁寧に支援します。"
+  },
+  {
+    title: "集団活動",
+    text: "遊びや制作などを通じて、順番やルール、人との関わりを経験します。"
+  },
+  {
+    title: "片付け・帰りの準備",
+    text: "活動を振り返りながら、持ち物や身支度を一緒に整えます。"
+  },
+  {
+    title: "ご帰宅",
+    text: "安全に帰宅できるよう見送り、その日の様子を必要に応じて共有します。"
+  }
 ];
 
 const news = [
-  "2026.04.01　ホームページを公開しました",
-  "2026.04.01　見学・ご相談を受け付けています"
+  "2026.06.27　内部テスト版を公開中",
+  "2026.06.27　正式サイト公開に向けて内容を確認中"
 ];
 
 export default function Home() {
@@ -66,9 +99,9 @@ export default function Home() {
       <header className="siteHeader">
         <a className="brand" href="#top" aria-label="トップへ戻る">
           <span className="brandMark" aria-hidden="true">
-            施
+            ソ
           </span>
-          <span>施設名</span>
+          <span>ソダテイル教室</span>
         </a>
         <nav className="siteNav" aria-label="ページ内メニュー">
           <a href="#top">トップ</a>
@@ -96,13 +129,13 @@ export default function Home() {
           />
           <div className="heroShade" aria-hidden="true" />
           <div className="heroContent">
-            <p className="sectionLabel">児童発達支援・放課後等デイサービス</p>
-            <h1 id="hero-title">
-              お子さま一人ひとりに寄り添う、
-              <span>安心できる居場所</span>
-            </h1>
+            <p className="sectionLabel">放課後等デイサービス</p>
+            <h1 id="hero-title">ソダテイル教室 ｜ お子さま一人ひとりに寄り添う、安心できる居場所</h1>
             <p className="heroText">
               発達段階や個性に合わせて、日々の生活・学び・コミュニケーションを丁寧にサポートします。
+            </p>
+            <p className="introNote">
+              ソダテイル教室は、放課後等デイサービスを提供する児童発達支援施設です。
             </p>
             <div className="heroActions">
               <a className="button primary" href="#contact">
@@ -119,7 +152,7 @@ export default function Home() {
           <div className="sectionInner aboutGrid">
             <div>
               <p className="sectionLabel">施設について</p>
-              <h2 id="about-title">私たちの施設について</h2>
+              <h2 id="about-title">ソダテイル教室について</h2>
             </div>
             <p className="leadText">
               明るく清潔な環境の中で、お子さまが安心して過ごせる空間づくりを大切にしています。遊びや日常生活の活動を通じて、できることを少しずつ増やしていけるよう支援します。
@@ -138,9 +171,10 @@ export default function Home() {
             </div>
             <div className="supportGrid">
               {supportAreas.map((area) => (
-                <article className="supportCard" key={area}>
+                <article className="supportCard" key={area.title}>
                   <span aria-hidden="true" />
-                  <h3>{area}</h3>
+                  <h3>{area.title}</h3>
+                  <p>{area.text}</p>
                 </article>
               ))}
             </div>
@@ -203,14 +237,16 @@ export default function Home() {
             </div>
             <ol className="flowList">
               {dailyFlow.map((item) => (
-                <li key={item}>
-                  <span>{item}</span>
+                <li key={item.title}>
+                  <span>{item.title}</span>
+                  <p>{item.text}</p>
                 </li>
               ))}
             </ol>
           </div>
         </section>
 
+        {/* Internal test notice: replace these news items when the official site is published. */}
         <section className="section newsSection" id="news" aria-labelledby="news-title">
           <div className="sectionInner newsGrid">
             <div>
@@ -231,12 +267,22 @@ export default function Home() {
               <p className="sectionLabel">お問い合わせ</p>
               <h2 id="contact-title">見学・ご相談をご希望の方へ</h2>
               <p>
-                施設の雰囲気や支援内容について、まずはお気軽にご相談ください。
+                見学・ご相談はこちらからお気軽にお問い合わせください。
               </p>
+              <div className="contactDetails" aria-label="お問い合わせ先">
+                <p>
+                  <span>TEL</span>
+                  <a href="tel:0456428965">045-642-8965</a>
+                </p>
+                <p>
+                  <span>問い合わせ時間</span>
+                  10:00 - 19:00
+                </p>
+              </div>
             </div>
             <div className="contactActions">
               <a className="button primary" href="tel:0456428965">
-                お問い合わせ
+                電話で問い合わせる
               </a>
               <a className="button secondary" href="tel:0456428965">
                 見学を申し込む
@@ -246,15 +292,17 @@ export default function Home() {
         </section>
       </main>
 
+      {/* Internal test footer: remove or replace this block before the official launch. */}
       <footer className="siteFooter">
         <div className="footerInner">
           <div>
-            <p className="footerName">施設名</p>
-            <p>〒221-0001 神奈川県横浜市神奈川区西寺尾1-18-7 CMA西寺尾2F</p>
-            <p>電話番号：045-642-8965</p>
-            <p>開所時間：10:00〜19:00</p>
+            <p className="footerName">ソダテイル教室（内部テスト運用中）</p>
+            <p>プライバシーポリシー・利用規約は正式公開時に掲載予定です。</p>
+            <p className="footerNotice">
+              このページは内部テスト版です。正式サイト公開時に最新情報を更新します。
+            </p>
           </div>
-          <a href="#top">プライバシーポリシー</a>
+          <a href="tel:0456428965">TEL 045-642-8965</a>
         </div>
       </footer>
     </>

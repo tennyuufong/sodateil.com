@@ -1,17 +1,17 @@
 :root {
-  --background: #fbfcf8;
+  --background: #f8fbfb;
   --surface: #ffffff;
-  --surface-green: #eff8ef;
+  --surface-green: #eef8f4;
   --surface-blue: #eef8fb;
-  --surface-yellow: #fff8dc;
-  --text: #24312d;
-  --muted: #61706b;
-  --green: #69a777;
-  --green-dark: #3c7d57;
-  --blue: #74b7d5;
-  --yellow: #f1d97c;
-  --line: #dfe9df;
-  --shadow: 0 16px 42px rgba(71, 99, 82, 0.12);
+  --surface-yellow: #fff9e8;
+  --text: #1f3437;
+  --muted: #5f7374;
+  --green: #68aa91;
+  --green-dark: #237b78;
+  --blue: #72b8cf;
+  --yellow: #f2d77a;
+  --line: #d9e9e8;
+  --shadow: 0 16px 42px rgba(43, 105, 107, 0.12);
   font-family:
     "Hiragino Sans", "Yu Gothic", "YuGothic", "Noto Sans JP", Meiryo,
     system-ui, sans-serif;
@@ -76,6 +76,7 @@ img {
   background: linear-gradient(135deg, var(--surface-green), var(--surface-blue));
   color: var(--green-dark);
   font-size: 0.94rem;
+  font-weight: 900;
 }
 
 .siteNav {
@@ -145,7 +146,7 @@ img {
 .heroContent {
   position: relative;
   z-index: 1;
-  width: min(680px, 100%);
+  width: min(760px, 100%);
 }
 
 .sectionLabel {
@@ -165,7 +166,7 @@ figure {
 
 h1 {
   margin-bottom: 22px;
-  font-size: clamp(2.45rem, 6vw, 4.85rem);
+  font-size: clamp(2.25rem, 5vw, 4.1rem);
   line-height: 1.18;
   letter-spacing: 0;
 }
@@ -196,7 +197,18 @@ h3 {
 
 .heroText {
   max-width: 620px;
+  margin-bottom: 16px;
+}
+
+.introNote {
+  max-width: 620px;
   margin-bottom: 30px;
+  border-left: 5px solid var(--blue);
+  border-radius: 14px;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.84);
+  color: #315255;
+  font-weight: 800;
 }
 
 .heroActions,
@@ -246,6 +258,8 @@ h3 {
 
 .sectionHeading p,
 .serviceCard p,
+.supportCard p,
+.flowList p,
 .contactPanel p,
 .siteFooter p {
   color: var(--muted);
@@ -271,7 +285,7 @@ h3 {
 }
 
 .supportCard {
-  min-height: 150px;
+  min-height: 222px;
   padding: 22px;
 }
 
@@ -279,9 +293,15 @@ h3 {
   display: block;
   width: 34px;
   height: 8px;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
   border-radius: 999px;
   background: var(--yellow);
+}
+
+.supportCard p {
+  margin-bottom: 0;
+  font-size: 0.94rem;
+  line-height: 1.75;
 }
 
 .supportCard:nth-child(2n) span {
@@ -378,7 +398,7 @@ figcaption {
 
 .flowList li {
   counter-increment: flow;
-  min-height: 132px;
+  min-height: 208px;
   border: 1px solid var(--line);
   border-radius: 18px;
   padding: 18px;
@@ -394,7 +414,15 @@ figcaption {
 }
 
 .flowList span {
+  display: block;
+  margin-bottom: 8px;
   font-weight: 800;
+}
+
+.flowList p {
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  line-height: 1.7;
 }
 
 .newsSection {
@@ -424,14 +452,51 @@ figcaption {
 
 .contactPanel {
   display: grid;
-  grid-template-columns: minmax(280px, 1fr) auto;
-  gap: 28px;
+  grid-template-columns: minmax(280px, 1fr) minmax(260px, auto);
+  gap: 34px;
   align-items: center;
-  border: 1px solid rgba(105, 167, 119, 0.24);
+  border: 1px solid rgba(35, 123, 120, 0.24);
   border-radius: 24px;
   padding: clamp(28px, 5vw, 52px);
-  background: linear-gradient(135deg, var(--surface-green), #ffffff 46%, var(--surface-yellow));
+  background: linear-gradient(135deg, var(--surface-blue), #ffffff 46%, var(--surface-green));
   box-shadow: var(--shadow);
+}
+
+.contactDetails {
+  display: grid;
+  gap: 10px;
+  max-width: 470px;
+  margin-top: 24px;
+}
+
+.contactDetails p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  align-items: baseline;
+  margin-bottom: 0;
+  border: 1px solid rgba(35, 123, 120, 0.16);
+  border-radius: 14px;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--text);
+  font-weight: 800;
+}
+
+.contactDetails span {
+  min-width: 9em;
+  color: var(--green-dark);
+  font-size: 0.88rem;
+}
+
+.contactDetails a {
+  color: var(--green-dark);
+  font-size: clamp(1.25rem, 2.6vw, 1.75rem);
+  font-weight: 900;
+}
+
+.contactActions {
+  align-content: center;
 }
 
 .siteFooter {
@@ -455,6 +520,11 @@ figcaption {
 .footerName {
   color: var(--text) !important;
   font-weight: 900;
+}
+
+.footerNotice {
+  margin-top: 10px;
+  font-size: 0.9rem;
 }
 
 .footerInner a {
